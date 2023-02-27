@@ -3,6 +3,7 @@ import Dashboard from "./views/Dashboard";
 import EnrollAStudent from "./views/enrollStudent/EnrollAStudent";
 import Login from "./views/login/Login";
 
+
 function App() {
   return (
     <Routes>

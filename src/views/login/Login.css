@@ -16,20 +16,27 @@
 }
 .login-container {
     background-color:#dcdcdc;
-    height: calc(100vh - 133px);
-    padding-top: 132px;
+    height: calc(100vh - 200px);
+    padding-top: 200px;
     padding-left: 200px;
-    flex: 1;
-    
+    flex: 1;    
 }
 .logo-container {
     text-align: center;
     width: 527px;
-    /* height: 1024px; */
-    background: #008081;
-    
-    
+    background: #008081;   
 }
+.logo-tech {
+  margin-top: 180px;    
+}
+.logo-label-container {
+  font-size: 50px;
+  margin-top: auto;
+}    
+.ver2-logo-label-container {
+    font-size: 50px;
+    line-height: normal;
+  }    
 .main-container {
     display: flex;
 }
@@ -39,11 +46,14 @@
     background: #008081;
     border-radius: 15px;
     border-style: hidden;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-left: 150px;
     width: 187px;
     height: 50px;
-}
+}  
+.remember-me{
+   padding-bottom: 20px;
+} 
 .email-field-container {
     position: relative;
 }
