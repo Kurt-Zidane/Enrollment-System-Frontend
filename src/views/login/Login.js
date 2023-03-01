@@ -16,7 +16,7 @@ const Login = () => {
         <div className="main-container">
             <div className="logo-container">
                 <div>
-                    <div className="logo-tech"><img src={images} /></div>
+                    <div className="logo-tech"><img src={images} alt="Logo" /></div>
                     <div className="logo-label-container">TECHNO</div>
                     <div className="ver2-logo-label-container">UNIVERSITY</div>
                 </div>

@@ -3,6 +3,7 @@
     font-size: 48px;
     color: #000000;
 }
+
 .login-input {
     padding-left: 32px;
     height: 42px;
@@ -11,35 +12,43 @@
     border-style: hidden;
     background: #FFFFFF;
 }
+
 .margin-top {
     margin-top: 30px;
 }
+
 .login-container {
-    background-color:#dcdcdc;
+    background-color: #dcdcdc;
     height: calc(100vh - 200px);
     padding-top: 200px;
     padding-left: 200px;
-    flex: 1;    
+    flex: 1;
 }
+
 .logo-container {
     text-align: center;
     width: 527px;
-    background: #008081;   
+    background: #008081;
 }
+
 .logo-tech {
-  margin-top: 180px;    
+    margin-top: 180px;
 }
+
 .logo-label-container {
-  font-size: 50px;
-  margin-top: auto;
-}    
+    font-size: 50px;
+    margin-top: auto;
+}
+
 .ver2-logo-label-container {
     font-size: 50px;
     line-height: normal;
-  }    
+}
+
 .main-container {
     display: flex;
 }
+
 .login-btn {
     font-size: 25px;
     color: #FFFFFF;
@@ -50,21 +59,26 @@
     margin-left: 150px;
     width: 187px;
     height: 50px;
-}  
-.remember-me{
-   padding-bottom: 20px;
-} 
+}
+
+.remember-me {
+    padding-bottom: 20px;
+}
+
 .email-field-container {
     position: relative;
 }
+
 .email-icon {
     position: absolute;
     top: 32px;
     left: 10px;
 }
+
 .password-field-container {
     position: relative;
 }
+
 .password-icon {
     position: absolute;
     top: 32px;
