@@ -3,6 +3,7 @@ import Dashboard from "./views/dashboard/Dashboard";
 import EnrollAStudent from "./views/enrollStudent/EnrollAStudent";
 import Login from "./views/login/Login";
 import Courses from "./views/courses/Courses";
+import EnrolledStudents from "./views/enrolledStudents/EnrolledStudents";
 
 
 
@@ -13,6 +14,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/enroll-student" element={<EnrollAStudent />} />
       <Route path="/courses" element={<Courses/>} />
+      <Route path="/enrolledStudents" element={<EnrolledStudents/>} />
     </Routes>
   );
 }

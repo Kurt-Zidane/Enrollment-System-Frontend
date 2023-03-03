@@ -1,6 +1,6 @@
-.main-dash-container{
-  padding-bottom: 186px;
-  background:#cfcaca;
+.main-dash-container{ 
+  padding-bottom: 30%;
+  background-color:#cfcaca;
 }
 .dash-header {
   text-indent: 10px;
@@ -21,8 +21,17 @@
     background: #ffffff;
     border-radius: 15px;
     border-style: hidden;
-    margin-top: 70px;
-    margin-left: 75px;
+    margin-top: 80px;
+    margin-left: 50px;
+    width: 280px;
+    height: 250px;
+  }
+  .enrolled-students-btn{
+    font-size: 15px;
+    background: #ffffff;
+    border-radius: 15px;
+    border-style: hidden;
+    margin-left: 100px;
     width: 280px;
     height: 250px;
   }
@@ -41,21 +50,39 @@
     height: 3px;
     background-color: #bdb8b8;
   }
-  .dash-label{
+  .horizontal-line-en{
+    text-align: center;
+    background-color: black;
+    width: 90%;
+    height: 3px;
     margin-top: 5px;
+    margin-left: 13px;
+    margin-bottom: 50px;
+  }
+  .dash-label{
+    line-height: 5px;
+    margin-top: 10px;
     font-size: 25px;
   }
   .course-icon{
-    width: 50px;
-    height: 80px;
+    width: 70px;
+    height: 45px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+  .enrolled-stud-icon{
+    width: 70px;
+    height: 50px;
     margin-left: 5px;
     margin-bottom: 20px;
   }
   .proceed-icon{
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-left: 5px;
-    margin-bottom: 8px;
+  }
+  .number-of-students{
+    font-size: 35px;
   }
 
 
