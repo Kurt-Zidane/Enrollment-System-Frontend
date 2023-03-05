@@ -1,5 +1,8 @@
+import Header from "../../components/header/Header";
 const EnrollAStudent = () => {
-    return <> EnrollAStudent </>
+    return <>
+        <Header></Header>
+    </>
 }
 
 export default EnrollAStudent;
