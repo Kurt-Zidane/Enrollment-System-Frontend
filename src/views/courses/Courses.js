@@ -1,5 +1,8 @@
+import Header from "../../components/header/Header";
 const Courses = () => {
-    return <> HELLO COURSES </>
+    return <> 
+    <Header></Header>
+    </>
 }
 
 export default Courses;

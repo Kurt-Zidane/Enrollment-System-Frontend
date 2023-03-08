@@ -1,5 +1,7 @@
+import Header from "../../components/header/Header";
 const EnrolledStudents = () => {
-    return <> LIST </>
+    return <>  <Header></Header>
+    </>
 }
 
 export default EnrolledStudents;
