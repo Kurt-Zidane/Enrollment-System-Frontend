@@ -1,23 +1,27 @@
+import * as React from 'react';
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import images from './images/logo192.png';
-import React, { useState } from "react";
+import { useState } from "react";
+import { UserInfo, UserLogin } from "../../components/Api/Api";
+import { useDispatch } from "react-redux";
+import { SetUser } from "../../components/Redux/Slices/User";
+import { SetLoggedIn } from "../../components/Redux/Slices/LoginState";
 
 
 const Login = () => {
-    const navigate = useNavigate();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleSubmit = () => {
-        console.log("email: ", email);
-        console.log("password: ", password);
-        navigate("/dashboard");
-        // TODO implement api call for login
-    }
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [user, setUser] = useState({
+        username: "",
+        password: "",
+    });
+    const [error, setError] = useState("");
+
     return (
         <div className="main-container">
             <div className="logo-container">
@@ -31,22 +35,40 @@ const Login = () => {
                 <div className="login-label">LOG IN</div>
                 <div className="email-field-container">
                     <div>Email: <FontAwesomeIcon icon={faEnvelope} className="email-icon" /></div>
-                    <input placeholder="Sample@gmail.com" type="text" className="login-input" 
-                    onChange={(event) => setEmail(event.target.value)}>
+                    <input placeholder="Sample@gmail.com" type="text" className="login-input"
+                        onChange={e => {
+                            setUser({ ...user, username: e.target.value });
+                        }}>
                     </input>
                 </div>
                 <div className="margin-top">
                     <div className="password-field-container">
                         <div>Password:<FontAwesomeIcon icon={faLock} className="password-icon" /></div>
-                        <input placeholder="Password" type="password" className="login-input" 
-                        onChange={(event) => setPassword(event.target.value)}></input>
+                        <input placeholder="Password" type="password" className="login-input"
+                            onChange={e => {
+                                setUser({ ...user, password: e.target.value });
+                            }}>
+                        </input>
                     </div>
                     <div className="remember-me">
                         <input type="checkbox" />Remember Me </div>
-                    <button className="login-btn" onClick={() => handleSubmit()}>Log In</button>
+                    <button className="login-btn" onClick={async () => {
+                        setUser({
+                            username: "",
+                            password: "",
+                        });
+                        if (await UserLogin(user)) {
+                            await dispatch(SetLoggedIn());
+                            await dispatch(SetUser(await UserInfo()));
+                            navigate("/dashboard");
+                        } else {
+                            setError("Invalid Login");
+                        }
+                    }}>Log In</button>
+                    <p>{error}</p>
                 </div>
             </div>
         </div>
     )
 }
-export default Login;   
+export default Login;  
