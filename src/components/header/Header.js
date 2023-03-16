@@ -10,6 +10,9 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [currentRoute, setCurrentRoute] = useState("dashboard");
+    const faculty = () => {
+        navigate("/faculty");
+    }
     const enrollStudent = () => {
         navigate("/enrollStudent");
     }
@@ -20,6 +23,7 @@ const Header = () => {
         const route = location.pathname.split("/")[1];
         setCurrentRoute(route);
     }, [location])
+    
     return (
         <div class="dash-header">
             <img src={images} alt="logo" width={50} height={55} />
@@ -47,7 +51,7 @@ const Header = () => {
                 }
             </div>
             <div><FontAwesomeIcon icon={faCircleUser} className="user-icon" /></div>
-            <span>JUAN D.</span>
+            <div onClick={() => faculty()}>JUAN D.</div>
             <div><FontAwesomeIcon icon={faAngleDown} className="user-more-icon" /></div>
         </div>
     )

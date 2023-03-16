@@ -1,0 +1,45 @@
+.main-container{
+    padding-bottom: 30%;
+    background-color: #cfcaca;
+}
+.proflie {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.line{
+    margin-top: 160px;
+    margin-left: 30px;
+    width: 62%;
+    height: 3px;
+    background-color: #bdb8b8;   
+}
+.label-faculty{
+    margin-top: 140px;
+    margin-left: 15px;
+    font-size: 30px;
+}
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 5%;
+  }
+.td{
+    display: table-cell;
+    vertical-align: inherit;
+   
+}
+.table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 15px;  
+}
+.input{
+    border-radius: 20px;
+    border-style: hidden;
+    height: 40px;
+    width: 200px;
+}
+
+  
+  
+  
