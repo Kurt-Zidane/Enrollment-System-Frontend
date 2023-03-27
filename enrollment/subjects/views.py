@@ -12,3 +12,4 @@ class SubjectViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = Subject.objects.all().order_by('date_added')
         return queryset
+    
