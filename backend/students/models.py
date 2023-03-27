@@ -1,10 +1,9 @@
 from django.db import models
-
-# Create your models here.
-
-from django.db import models
+from subjects.models import Subject
+import uuid
 
 class Student(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_initial = models.CharField(max_length=1, blank=True, null=True)
@@ -26,3 +25,6 @@ class Student(models.Model):
     PSA_or_NSO = models.BooleanField(default=False)
     _2x2_picture = models.BooleanField(default=False)
     Certificate_of_Good_Morale = models.BooleanField(default=False)
+    subjects = models.ManyToManyField(Subject)
+    
+    
