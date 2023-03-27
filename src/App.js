@@ -5,15 +5,20 @@ import Login from "./views/login/Login";
 import Courses from "./views/courses/Courses";
 import EnrolledStudents from "./views/enrolledStudents/EnrolledStudents";
 
+import { Provider } from "react-redux";
+import Store from "./Features/Redux/Store/Store";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/enrollstudent" element={<EnrollAStudent />} />
-      <Route path="/courses" element={<Courses/>} />
-      <Route path="/enrolledStudents" element={<EnrolledStudents/>} />
-    </Routes>
+    <Provider store={Store}>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/enrollstudent" element={<EnrollAStudent />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/enrolledStudents" element={<EnrolledStudents />} />
+      </Routes>
+    </Provider>
   );
 }
 

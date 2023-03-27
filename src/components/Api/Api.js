@@ -16,6 +16,7 @@ export function UserLogin(user) {
         console.log("Login Failed: " + error);
         return false;
       });
+    
   }
 
   export function UserInfo() {

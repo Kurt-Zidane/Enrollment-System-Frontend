@@ -57,6 +57,7 @@ const Login = () => {
                             username: "",
                             password: "",
                         });
+                        console.log(user)
                         if (await UserLogin(user)) {
                             await dispatch(SetLoggedIn());
                             await dispatch(SetUser(await UserInfo()));
