@@ -4,6 +4,7 @@ import EnrollAStudent from "./views/enrollStudent/EnrollAStudent";
 import Login from "./views/login/Login";
 import Courses from "./views/courses/Courses";
 import EnrolledStudents from "./views/enrolledStudents/EnrolledStudents";
+import Faculty from "./views/faculty/Faculty";
 
 import { Provider } from "react-redux";
 import Store from "./Features/Redux/Store/Store";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/enrollstudent" element={<EnrollAStudent />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/enrolledStudents" element={<EnrolledStudents />} />
+      <Route path="/faculty" element={<Faculty/>} />
       </Routes>
     </Provider>
   );
