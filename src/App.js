@@ -8,10 +8,13 @@ import Faculty from "./views/faculty/Faculty";
 
 import { Provider } from "react-redux";
 import Store from "./Features/Redux/Store/Store";
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
+const queryClient = new QueryClient()
 function App() {
   return (
     <Provider store={Store}>
+      <QueryClientProvider client={queryClient}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/enrolledStudents" element={<EnrolledStudents />} />
       <Route path="/faculty" element={<Faculty/>} />
       </Routes>
+      </QueryClientProvider>
     </Provider>
   );
 }

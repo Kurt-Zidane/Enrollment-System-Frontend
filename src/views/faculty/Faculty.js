@@ -2,10 +2,21 @@ import Header from "../../components/header/Header";
 import "./Faculty.css";
 import images from './images/3135715.png';
 import { useState } from "react";
-
-
+import { ProfileInfo } from "../../components/Api/Api";
+import { useQuery } from "react-query";
 const Faculty = () => {
     const [isEditable, setIsEditable] = useState(false);
+
+    const { data, isLoading, isError } = useQuery('profileInfo', ProfileInfo);
+
+    if (isLoading) {
+      return <div>Loading profile info...</div>;
+    }
+  
+    if (isError) {
+      return <div>Error fetching profile info</div>;
+    }
+  
     return <>
         <Header></Header>
         <div className="main-container">
@@ -20,19 +31,19 @@ const Faculty = () => {
         <tr>
           <td className="td">Full Name</td>
           <td >
-            <input className="input"
+            <input className="input" placeholder= {data.first_name}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
           </td>
           <td>
-            <input className="input"
+            <input className="input" placeholder= {data.last_name}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
           </td>
           <td>
-            <input className="input"
+            <input className="input" placeholder= {data.mi}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -41,7 +52,7 @@ const Faculty = () => {
         <tr>
           <td>Birthday</td>
           <td>
-            <input className="input"
+            <input className="input" placeholder= {data.birthdate}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -50,7 +61,7 @@ const Faculty = () => {
         <tr>
           <td>Gender</td>
           <td>
-            <input className="input"
+            <input className="input" placeholder= {data.gender}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -59,7 +70,7 @@ const Faculty = () => {
         <tr>
           <td>Address</td>
           <td>
-            <input className="input"
+            <input className="input" placeholder= {data.address}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />

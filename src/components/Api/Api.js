@@ -22,11 +22,20 @@ export function UserLogin(user) {
   export function UserInfo() {
     const token = JSON.parse(localStorage.getItem("token") || "{}");
     return axios
-      .get("http://localhost:8000/api/v1/accounts/users/me/", {
+      .get("http://localhost:8000/api/v1/accounts/users/me", {
         headers: {
           Authorization: "Token " + token,
         },
       })
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+  }
+
+  export function ProfileInfo() {
+    return axios
+      .get("http://localhost:8000/api/v1/profiles/2/")
       .then((response) => {
         console.log(response.data);
         return response.data;
