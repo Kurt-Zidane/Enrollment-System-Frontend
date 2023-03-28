@@ -5,4 +5,5 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('',include('subjects.urls')),
     path('',include('professor.urls')),
+    path('',include('profiles.urls')),
 ]
