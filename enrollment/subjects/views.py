@@ -1,15 +1,23 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
-from .serializers import SubjectSerializer
-from .models import Subject
+from rest_framework import generics
+from .serializers import SubjectSerializer, SubjectProfessorSerializer, SubjectStudentSerializer
+from .models import Subject, SubjectProfessor, SubjectStudent
 
 
 class SubjectViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     serializer_class = SubjectSerializer
-    queryset = Subject.objects.all()
+    queryset = Subject.objects.all().order_by('date_added')
 
-    def get_queryset(self):
-        queryset = Subject.objects.all().order_by('date_added')
-        return queryset
-    
+
+class SubjectProfessorViewSet(generics.ListAPIView):
+    # permission_classes = [IsAuthenticated]
+    serializer_class = SubjectProfessorSerializer
+    queryset = SubjectProfessor.objects.all().order_by('date_joined')
+
+
+class SubjectStudentViewSet(generics.ListAPIView):
+    # permission_classes = [IsAuthenticated]
+    serializer_class = SubjectStudentSerializer
+    queryset = SubjectStudent.objects.all().order_by('date_joined')

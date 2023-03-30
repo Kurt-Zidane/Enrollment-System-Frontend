@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=True)
@@ -12,6 +14,7 @@ class Profile(models.Model):
     birthdate = models.DateField(null=True, blank=True)
     address = models.CharField(max_length=200, null=True)
     date_joined = models.DateTimeField(default=now, editable=False)
+
 
     GENDER_CHOICES = (
         ('Male', 'Male'),

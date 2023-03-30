@@ -7,8 +7,4 @@ from .models import Professor
 class ProfessorViewSet(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
     serializer_class = ProfessorSerializer
-    queryset = Professor.objects.all()
-
-    def get_queryset(self):
-        queryset = Professor.objects.all().order_by('date_joined')
-        return queryset
+    queryset = Professor.objects.all().order_by('date_joined')

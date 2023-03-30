@@ -10,5 +10,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
 
     def get_queryset(self):
-        queryset = Profile.objects.all().order_by('date_joined')
+        user = self.request.user
+        queryset = Profile.objects.filter(owner=user)
         return queryset
+    
