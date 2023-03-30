@@ -31,19 +31,19 @@ const Faculty = () => {
         <tr>
           <td className="td">Full Name</td>
           <td >
-            <input className="input" placeholder= {data.first_name}
+            <input className="input" placeholder= {data[0].first_name}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
           </td>
           <td>
-            <input className="input" placeholder= {data.last_name}
+            <input className="input" placeholder= {data[0].last_name}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
           </td>
           <td>
-            <input className="input" placeholder= {data.mi}
+            <input className="input" placeholder= {data[0].mi}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -52,7 +52,7 @@ const Faculty = () => {
         <tr>
           <td>Birthday</td>
           <td>
-            <input className="input" placeholder= {data.birthdate}
+            <input className="input" placeholder= {data[0].birthdate}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -61,7 +61,7 @@ const Faculty = () => {
         <tr>
           <td>Gender</td>
           <td>
-            <input className="input" placeholder= {data.gender}
+            <input className="input" placeholder= {data[0].gender}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
@@ -70,7 +70,7 @@ const Faculty = () => {
         <tr>
           <td>Address</td>
           <td>
-            <input className="input" placeholder= {data.address}
+            <input className="input" placeholder= {data[0].address}
               readOnly={!isEditable}
               style={{ background: !isEditable ? "#d5d5d5" : null }}
             />
