@@ -46,3 +46,17 @@ export function UserLogin(user) {
         return response.data;
       });
   }
+
+  export function SetProfileInfo(id) {
+    const token = JSON.parse(localStorage.getItem("token") || "{}");
+    return axios 
+      .get("http://localhost:8000/api/v1/profiles/",{
+        headers: {
+          Authorization: "Token " + token
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+  }
