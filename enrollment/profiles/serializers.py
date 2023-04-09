@@ -10,6 +10,6 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
 
         model = Profile
-        fields = ('id', 'first_name', 'mi', 'suffix', 'owner',
+        fields = ('id','first_name', 'mi', 'suffix', 'owner',
                    'last_name','gender', 'address','date_joined','image','birthdate')
-        read_only_fields = ('id', 'date_joined')
+        read_only_fields = ('id','date_joined','owner')

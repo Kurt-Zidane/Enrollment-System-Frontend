@@ -1,11 +1,11 @@
 from rest_framework.permissions import IsAuthenticated
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .serializers import ProfileSerializer
 from .models import Profile
 
 
-class ProfileViewSet(viewsets.ModelViewSet):
-    # permission_classes = [IsAuthenticated]
+class ProfileViewSet(generics.RetrieveUpdateAPIView):
+    permission_classes = [IsAuthenticated]
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
 
@@ -13,4 +13,12 @@ class ProfileViewSet(viewsets.ModelViewSet):
         user = self.request.user
         queryset = Profile.objects.filter(owner=user)
         return queryset
+    
+    
+class ProfilesViewSet(generics.ListAPIView):
+    # permission_classes = [IsAuthenticated]
+    serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
+
+    
     
